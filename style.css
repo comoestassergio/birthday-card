@@ -11,6 +11,8 @@
 html, body {
     margin: 0;
     padding: 0;
+
+    overflow: hidden;
 }
 
 main {
@@ -106,6 +108,26 @@ main {
     animation: screen-anim 600ms var(--timing) forwards;
 }
 
+.start-btn {
+    border: none;
+    padding: .5rem 2rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, .6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.start-btn:hover {
+    background-color: rgba(255, 255, 255, .7);
+}
+
+.start-btn.clicked {
+    animation: start-btn-anim 500ms var(--timing) forwards;
+}
+
+
 @keyframes card-anim {
     0% {
         transform: scale(0);
@@ -126,14 +148,36 @@ main {
     }
 }
 
+@keyframes start-btn-anim {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
 @media (max-width: 500px) {
     .final-screen {
         font-size: 1.5rem;
+    }
+
+    main {
+        gap: .7rem;
     }
 }
 
 @media (max-width: 400px){
     .card {
         max-width: 350px;
+    }
+
+    main {
+        gap: .5rem;
     }
 }

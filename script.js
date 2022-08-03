@@ -21,7 +21,7 @@ cards.forEach(card => {
 setTimeout(function(){
     makeVisible(finalScreen)
     playSound(fnlScreeSound)
-}, 22000)
+}, 20000)
 
 function makeVisible(el){
     el.classList.toggle('visible')

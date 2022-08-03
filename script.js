@@ -1,8 +1,8 @@
 const cards = document.querySelectorAll('.card')
 const finalScreen = document.querySelector('.final-screen')
 
-const msgSound = new Audio('./assets/msg-sound.mp4')
-const fnlScreeSound = new Audio('./assets/fnl-screen-sound.mp4')
+const msgSound = new Audio('/assets/msg-sound.mp4')
+const fnlScreeSound = new Audio('/assets/fnl-screen-sound.mp4')
 
 const DEFAULT_DELAY = 1000
 let multiplier = 1

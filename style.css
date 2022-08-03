@@ -117,6 +117,8 @@ main {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     cursor: pointer;
+
+    color: black;
 }
 
 .start-btn:hover {

@@ -1,3 +1,8 @@
+:root {
+    --delay: 500;
+    --timing: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
 *, *::after, *::before {
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
@@ -22,12 +27,12 @@ main {
 }
 
 .card {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 
     background-color: rgba(255, 255, 255, .6);
-    backdrop-filter: blur(10px), saturate(180%);
+    backdrop-filter: blur(10px);
 
     padding: .5rem 2rem;
     border-radius: 2rem;
@@ -41,11 +46,80 @@ main {
 
 .card__name {
     font-size: 1rem;
-    margin-bottom: .5rem;
+    margin-bottom: .7rem;
+
+    position: relative;
+}
+
+.card__name::after{
+    position: absolute;
+
+    right: 0%;
+    bottom: 0;
+
+    content: 'now';
+
+    width: fit-content;
+    height: 1rem;
+
+    color: rgb(105, 105, 105);
+
+    font-size: .7rem;
+    font-weight: 300;
 }
 
 .card__message {
     margin-top: 0;
     max-width: 230px;
     line-height: 1.5;
+}
+
+.card.visible {
+    display: flex;
+    animation: card-anim 200ms var(--timing) forwards;
+}
+
+.final-screen {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: rgb(255, 246, 232);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+    font-size: 3rem;
+
+    transform-origin: top;
+}
+
+.final-screen.visible {
+    display: flex;
+    animation: screen-anim 600ms ease forwards;
+}
+
+@keyframes card-anim {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes screen-anim {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
 }

@@ -101,7 +101,7 @@ main {
 
 .final-screen.visible {
     display: flex;
-    animation: screen-anim 600ms ease forwards;
+    animation: screen-anim 600ms var(--timing) forwards;
 }
 
 @keyframes card-anim {
@@ -121,5 +121,17 @@ main {
 
     100% {
         transform: scaleX(1);
+    }
+}
+
+@media (max-width: 500px) {
+    .final-screen {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 400px){
+    .card {
+        max-width: 350px;
     }
 }

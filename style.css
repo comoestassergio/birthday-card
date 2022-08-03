@@ -1,0 +1,51 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1.5rem;
+
+    background-image: url(/assets/bckgr.jpg);
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(255, 255, 255, .6);
+    backdrop-filter: blur(10px), saturate(180%);
+
+    padding: .5rem 2rem;
+    border-radius: 2rem;
+
+    gap: 1rem;
+}
+
+.card__image {
+    border-radius: 50%;
+}
+
+.card__name {
+    font-size: 1rem;
+    margin-bottom: .5rem;
+}
+
+.card__message {
+    margin-top: 0;
+    max-width: 230px;
+    line-height: 1.5;
+}

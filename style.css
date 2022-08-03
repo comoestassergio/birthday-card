@@ -77,7 +77,7 @@ main {
 
 .card.visible {
     display: flex;
-    animation: card-anim 200ms var(--timing) forwards;
+    animation: card-anim 400ms var(--timing) forwards;
 }
 
 .final-screen {

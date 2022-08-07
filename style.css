@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap');
+
 :root {
     --delay: 500;
     --timing: cubic-bezier(0.18, 0.89, 0.32, 1.28);
@@ -5,7 +7,7 @@
 
 *, *::after, *::before {
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 html, body {
@@ -25,7 +27,7 @@ main {
 
     gap: 1.5rem;
 
-    background-image: url(/assets/bckgr.jpg);
+    /* background-image: url(/assets/bckgr.jpg); */
 }
 
 .card {
@@ -86,19 +88,20 @@ main {
 .final-screen {
     position: absolute;
 
-    top: 0;
+    top: -15%;
     bottom: 0;
     left: 0;
     right: 0;
 
-    background-color: rgb(255, 246, 232);
+    background-color: transparent;
 
     display: none;
     align-items: center;
     justify-content: center;
 
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 1.75rem;
+    color: whitesmoke;
 
     transform-origin: top;
 }
@@ -129,6 +132,25 @@ main {
     animation: start-btn-anim 500ms var(--timing) forwards;
 }
 
+#vid {
+    position: absolute;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    height: 100vh;
+}
+
+#bckgr-vid {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scale(2);
+}
+
+.card.hidden {
+    animation: card-disappear-anim 200ms var(--timing) forwards;
+}
+
 
 @keyframes card-anim {
     0% {
@@ -142,11 +164,11 @@ main {
 
 @keyframes screen-anim {
     0% {
-        transform: scaleY(0);
+        transform: opacity(0);
     }
 
     100% {
-        transform: scaleX(1);
+        transform: opacity(1);
     }
 }
 
@@ -164,13 +186,38 @@ main {
     }
 }
 
-@media (max-width: 500px) {
-    .final-screen {
-        font-size: 1.5rem;
+@keyframes card-disappear-anim {
+    0% {
+        transform: scale(1);
     }
 
+    100% {
+        transform: scale(0)
+    }
+}
+
+@media (max-width: 600px) {
     main {
         gap: .7rem;
+    }
+
+    main::before{
+        content: 'Открой с компа :)';
+        position: absolute;
+
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        background-color: black;
+        color: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        z-index: 100;
     }
 }
 
